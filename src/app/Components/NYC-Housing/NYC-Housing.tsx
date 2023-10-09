@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "@nextui-org/react";
+import { Image, Link } from "@nextui-org/react";
 
 export default function NYC_Housing() {
     return (
@@ -37,6 +37,9 @@ export default function NYC_Housing() {
                             alt="NYC Housing Data Visualization 3"
                         />
                     </div>
+                    <Link showAnchorIcon href="https://drive.google.com/file/d/1xHexFOwI6IoZ8dA5RZeXKu2Dh3F4R_Un/view" target="_blank">
+                        Raw Image Set
+                    </Link>
                 </div>
             </div> 
             <section className="mb-8">
@@ -59,17 +62,19 @@ export default function NYC_Housing() {
                     </p>
                 </div>
             </section>
-            <section className="mb-8">
+            <section className="mb-10">
                 <div className="max-w-3xl mx-auto text-left">
                     <h3 className="text-3xl font-bold mb-5">
                         Data Cleaning and Aggregation
                     </h3>
                     <p className="text-gray-700">
                         Given the nature of the initial dataset, there were a couple of anomalies present within the dataset. The end decision was to remove outliers in sale price by removing the transition of deeds between family members (sale prices less than $100) as well as removing rows from the dataset where either sale prices, tax class, borough ID, or year built was missing. <br /><br /> In terms of data aggregation, given the data sets' grand granularity, sale prices were grouped by borough which ultimately allowed for borough-specific trends to be visualized and provided a segmented view of NYC's housing landscape. Additionally, rather than work with the vast array of sales prices as well as given that there were multiple sales prices within a year for the same tax class, I decided to calculate the median sale price for a given year, borough, and tax class. This choice was made with the idea that it would be robust against outliers, ensuring that the few extreme values present in the data set wouldn't skew the visualizations. By grouping the visualization further by tax class, this decision was made with the hope of further highlighting the difference in property types and their respective price dynamics. By separating the data set in these ways, I was able to create a visualization that dictates a clear, accurate, and insightful narrative of NYC's housing market. 
-
                     </p>
                 </div>
             </section>
+            <Link showAnchorIcon href="https://drive.google.com/file/d/1cx7NNLkw57wKdoiE73LGnPLG9mVDS3pd/view" target="_blank">
+                PDF of Write Up
+            </Link>
         </div>
     );
 };
